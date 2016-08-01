@@ -4,7 +4,7 @@
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="/plugin/Font-Awesome-3.2.1/css/font-awesome.min.css">
         <style>
             html, body {
                 height: 100%;
@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title"><p><i class="icon-camera-retro icon-4x"></i> icon-camera-retro</p>Laravel 5</div>
             </div>
         </div>
     </body>
