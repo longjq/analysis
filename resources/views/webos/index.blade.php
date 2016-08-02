@@ -25,6 +25,39 @@
         div, img { behavior: url(js/iepngfix.htc) }
     </style>
     <![endif]-->
+    <style>
+        #dash-box ul{
+            list-style: none;
+            background: #fff;
+        }
+        #dash-box ul li{
+            padding: 7px 11px;
+        }
+        #dash-box{
+            position: absolute;
+            top: 300px;
+            left: 35%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-shadow: 0 20px 50px #333;
+        }
+        #dash-box table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #dash-box table th{
+            padding: 7px 11px;
+            color: #fff;
+            background: url(images/dock_up_c.png) repeat-x scroll center center transparent;
+        }
+        #dash-box table td{
+            padding: 7px 11px;
+            text-align: center;
+            color: #555;
+            background: #fff;
+        }
+    </style>
 </head>
 <body>
 <div id="themeSetting_wrap" style="display:none;">
@@ -59,7 +92,7 @@
 </div>
 
 <div id="zoomWallpaperGrid" class="zoomWallpaperGrid" style="position: absolute; z-index: -10; left: 0pt; top: 0pt; overflow: hidden; height: 381px; width: 1440px;">
-    <img id="zoomWallpaper" class="zoomWallpaper" style="position: absolute; top: 0pt; left: 0pt; height: 381px; width: 1440px;" src="images/blue_glow.jpg">
+    <img id="zoomWallpaper" class="zoomWallpaper" style="position: absolute; top: 0pt; left: 0pt; height: 381px; width: 1440px;" src="images/bg.jpg">
 </div>
 <div class="taskbar_start_menu_container" id="startMenuContainer" _olddisplay="block" style="display: none;">
     <div class="startMenuImg taskbar_start_menu_body" id="taskbar_start_menu_body">
@@ -85,8 +118,99 @@
         <a class="startMenuImg logout_botton" title="注销当前用户" cmd="logout" href="###"></a>
     </div>
 </div>
+<div id="dash-box">
+    <table>
+        <thead>
+        <tr>
+            <th colspan="6">数据状态</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>总用户数</td>
+            <td>{{ $dc['total'] }}</td>
+            <td>最后执行</td>
+            <td colspan="3" style="word-break: break-all;">{{ $dc['last_query'] }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="6">新增数</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>今日新增</td>
+            <td>{{ $dc['now_new_day'] }}</td>
+            <td>本周新增</td>
+            <td>{{ $dc['now_new_week'] }}</td>
+            <td>本月月新增</td>
+            <td>{{ $dc['now_new_month'] }}</td>
+        </tr>
+        <tr>
+            <td>昨日新增</td>
+            <td>{{ $dc['last_new_day'] }}</td>
+            <td>上周新增</td>
+            <td>{{ $dc['last_new_day'] }}</td>
+            <td>上月新增</td>
+            <td>{{ $dc['last_new_day'] }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="6">活跃数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>今日活跃</td>
+            <td>{{ $dc['now_hot_day'] }}</td>
+            <td>本周活跃</td>
+            <td>{{ $dc['now_hot_week'] }}</td>
+            <td>本月活跃</td>
+            <td>{{ $dc['now_hot_month'] }}</td>
+        </tr>
+        <tr>
+            <td>昨日新增</td>
+            <td>{{ $dc['last_hot_day'] }}</td>
+            <td>上周新增</td>
+            <td>{{ $dc['last_hot_week'] }}</td>
+            <td>上月新增</td>
+            <td>{{ $dc['last_hot_month'] }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="6">存活率</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>次日平均存活率</td>
+            <td>{{ $dc['last_avg_day'] }}</td>
+            <td>7日平均存活率</td>
+            <td>{{ $dc['last_avg_seven_day'] }}</td>
+            <td>30日平均存活率</td>
+            <td>{{ $dc['last_avg_thirty_day'] }}</td>
+        </tr>
+        <tr>
+            <td><b>{{ $dc['now_avg_day_date'] }}</b> 次日存活率</td>
+            <td>{{ $dc['now_avg_day'] }}</td>
+            <td><b>{{ $dc['now_avg_week_date'] }}</b> 7日存活率</td>
+            <td>{{ $dc['now_avg_week'] }}</td>
+            <td><b>{{ $dc['now_avg_month_date'] }}</b> 30日存活率</td>
+            <td>{{ $dc['now_avg_month'] }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
 
 </body>
-
-
 </html>

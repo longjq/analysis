@@ -15,11 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dash', function () {
-    return view('webos/index');
-});
 
 // 数据首页
-Route::get('/dash/index', function () {
-    return view('dash/index');
-});
+Route::get('/dash', 'DashController@index');
